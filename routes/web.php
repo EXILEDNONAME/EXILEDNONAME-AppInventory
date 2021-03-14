@@ -12,4 +12,5 @@ Route::get('dashboard/file-manager', 'Backend\System\FileManagerController@index
 Route::get('dashboard/logout', 'Backend\System\DashboardController@logout')->name('dashboard.logout');
 
 // SYSTEM
+require __DIR__.'/backend/main/default.php';
 require __DIR__.'/backend/system/default.php';

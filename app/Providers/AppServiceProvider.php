@@ -9,6 +9,7 @@ use Carbon\Carbon;
 class AppServiceProvider extends ServiceProvider {
 
   public function register() {
+    require_once app_path() . '/Helpers/Main/Default.php';
     require_once app_path() . '/Helpers/System/Default.php';
   }
 
