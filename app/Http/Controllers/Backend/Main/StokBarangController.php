@@ -8,10 +8,10 @@ use Redirect,Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
-use App\Http\Requests\Backend\Main\DataBarang\DataBarangStoreRequest;
-use App\Http\Requests\Backend\Main\DataBarang\DataBarangUpdateRequest;
+use App\Http\Requests\Backend\Main\StokBarang\StokBarangStoreRequest;
+use App\Http\Requests\Backend\Main\StokBarang\StokBarangUpdateRequest;
 
-class DataBarangController extends Controller {
+class StokBarangController extends Controller {
 
   /**
   **************************************************
@@ -22,9 +22,9 @@ class DataBarangController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/master-data/data-barang';
-    $this->path = 'pages.backend.main.data-barang';
-    $this->model = 'App\Models\Backend\Main\DataBarang';
+    $this->url = '/dashboard/stok-barang';
+    $this->path = 'pages.backend.main.stok-barang';
+    $this->model = 'App\Models\Backend\Main\StokBarang';
   }
 
   /**
@@ -36,7 +36,7 @@ class DataBarangController extends Controller {
   public function index(Request $request) {
 
     $model = $this->model;
-    $data = $this->model::with(['data_suppliers', 'jenis_barangs', 'merk_barangs'])->select('data_barangs.*');
+    $data = $this->model::with(['data_suppliers', 'jenis_barangs', 'merk_barangs'])->select('stok_barangs.*');
 
     if(request()->ajax()) {
       return DataTables::eloquent($data)
@@ -71,13 +71,13 @@ class DataBarangController extends Controller {
     return view($this->path . '.edit', compact('path', 'data'));
   }
 
-  public function store(DataBarangStoreRequest $request) {
+  public function store(StokBarangStoreRequest $request) {
     $store = $request->all();
     $this->model::create($store);
     return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
   }
 
-  public function update(DataBarangUpdateRequest $request, $id) {
+  public function update(StokBarangUpdateRequest $request, $id) {
     $data = $this->model::findOrFail($id);
     $update = $request->all();
     $data->update($update);

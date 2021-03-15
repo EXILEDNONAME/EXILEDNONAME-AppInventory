@@ -22,7 +22,7 @@ class DataSupplierController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/data-supplier';
+    $this->url = '/dashboard/data/supplier';
     $this->path = 'pages.backend.main.data-supplier';
     $this->model = 'App\Models\Backend\Main\DataSupplier';
   }

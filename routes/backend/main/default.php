@@ -3,7 +3,7 @@
 // DATA-SUPPLIERS
 Route::group([
   'as' => 'data-supplier.',
-  'prefix' => 'dashboard/data-supplier',
+  'prefix' => 'dashboard/data/supplier',
   'namespace' => 'Backend\Main',
 ], function(){
   Route::get('status-done/{id}', 'DataSupplierController@status_done')->name('status-done');
@@ -19,7 +19,7 @@ Route::group([
 // JENIS-BARANG
 Route::group([
   'as' => 'jenis-barang.',
-  'prefix' => 'dashboard/master-data/jenis-barang',
+  'prefix' => 'dashboard/data/jenis-barang',
   'namespace' => 'Backend\Main',
 ], function(){
   Route::get('status-done/{id}', 'JenisBarangController@status_done')->name('status-done');
@@ -35,7 +35,7 @@ Route::group([
 // MERK-BARANG
 Route::group([
   'as' => 'merk-barang.',
-  'prefix' => 'dashboard/master-data/merk-barang',
+  'prefix' => 'dashboard/data/merk-barang',
   'namespace' => 'Backend\Main',
 ], function(){
   Route::get('status-done/{id}', 'MerkBarangController@status_done')->name('status-done');
@@ -51,15 +51,15 @@ Route::group([
 // DATA-BARANG
 Route::group([
   'as' => 'data-barang.',
-  'prefix' => 'dashboard/master-data/data-barang',
+  'prefix' => 'dashboard/stok-barang',
   'namespace' => 'Backend\Main',
 ], function(){
-  Route::get('status-done/{id}', 'DataBarangController@status_done')->name('status-done');
-  Route::get('status-pending/{id}', 'DataBarangController@status_pending')->name('status-pending');
-  Route::get('enable/{id}', 'DataBarangController@enable')->name('enable');
-  Route::get('disable/{id}', 'DataBarangController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'DataBarangController@status')->name('status');
-  Route::get('delete/{id}', 'DataBarangController@delete')->name('delete');
-  Route::get('deleteall', 'DataBarangController@deleteall')->name('deleteall');
-  Route::resource('/', 'DataBarangController')->parameters(['' => 'id']);
+  Route::get('status-done/{id}', 'StokBarangController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'StokBarangController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'StokBarangController@enable')->name('enable');
+  Route::get('disable/{id}', 'StokBarangController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'StokBarangController@status')->name('status');
+  Route::get('delete/{id}', 'StokBarangController@delete')->name('delete');
+  Route::get('deleteall', 'StokBarangController@deleteall')->name('deleteall');
+  Route::resource('/', 'StokBarangController')->parameters(['' => 'id']);
 });

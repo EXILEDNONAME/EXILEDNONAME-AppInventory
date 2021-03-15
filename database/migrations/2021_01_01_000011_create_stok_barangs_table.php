@@ -4,10 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDataBarangsTable extends Migration {
+class CreateStokBarangsTable extends Migration {
 
   public function up() {
-    Schema::create('data_barangs', function (Blueprint $table) {
+    Schema::create('stok_barangs', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('id_supplier')->unsigned();
       $table->integer('id_jenis')->unsigned();
@@ -27,7 +27,7 @@ class CreateDataBarangsTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('data_barangs');
+    Schema::dropIfExists('stok_barangs');
   }
 
 }

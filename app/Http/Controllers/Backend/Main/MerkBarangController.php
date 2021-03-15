@@ -22,7 +22,7 @@ class MerkBarangController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/master-data/merk-barang';
+    $this->url = '/dashboard/data/merk-barang';
     $this->path = 'pages.backend.main.merk-barang';
     $this->model = 'App\Models\Backend\Main\MerkBarang';
   }

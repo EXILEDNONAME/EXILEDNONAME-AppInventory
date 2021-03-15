@@ -1,5 +1,5 @@
 @extends('layouts.pages.edit', ['page' => 'edit'])
-@push('title', 'Data Barang')
+@push('title', 'Stok Barang')
 
 @push('content-body')
 <form method="POST" action="{{ URL::current() }}/../../{{ $data->id }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">

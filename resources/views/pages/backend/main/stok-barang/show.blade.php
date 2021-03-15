@@ -1,5 +1,5 @@
 @extends('layouts.pages.show', ['page' => 'show'])
-@push('title', 'Data Barang')
+@push('title', 'Stok Barang')
 
 @push('content-body')
 <div class="table-responsive">

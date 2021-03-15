@@ -1,5 +1,5 @@
 @extends('layouts.pages.index', ['page' => 'index'])
-@push('title', 'Data Barang')
+@push('title', 'Stok Barang')
 
 @push('content-head')
 <th> Supplier </th>

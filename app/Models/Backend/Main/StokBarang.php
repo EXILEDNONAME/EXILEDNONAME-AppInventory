@@ -9,11 +9,11 @@ use App\Models\Backend\Main\DataSupplier;
 use App\Models\Backend\Main\JenisBarang;
 use App\Models\Backend\Main\MerkBarang;
 
-class DataBarang extends Model {
+class StokBarang extends Model {
 
   use LogsActivity;
 
-  protected $table = 'data_barangs';
+  protected $table = 'stok_barangs';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 

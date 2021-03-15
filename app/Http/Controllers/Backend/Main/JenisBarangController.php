@@ -22,7 +22,7 @@ class JenisBarangController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/master-data/jenis-barang';
+    $this->url = '/dashboard/data/jenis-barang';
     $this->path = 'pages.backend.main.jenis-barang';
     $this->model = 'App\Models\Backend\Main\JenisBarang';
   }

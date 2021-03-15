@@ -1,5 +1,5 @@
 @extends('layouts.pages.create', ['page' => 'create'])
-@push('title', 'Data Barang')
+@push('title', 'Stok Barang')
 
 @push('content-body')
 <form method="POST" action="{{ URL::current() }}/../" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
